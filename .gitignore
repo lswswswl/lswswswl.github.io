@@ -5,5 +5,5 @@ coverage/
 .sass-cache/
 .idea/
 .tmp/
-.publish/
+.publish/ 
 dist/
