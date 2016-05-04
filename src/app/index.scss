@@ -12,6 +12,137 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // bower:scss
 // endbower
 
+$text-red: #CE1414;
+$border-grey: #ccc;
+$status-green: #1c8748;
+$status-red: #c8313b;
+// $status-green: white;
+// $status-red: white;
+
+.test-hidden {
+  display: none;
+}
+.validation-text {
+  color: $text-red;
+  margin: 5px;
+}
+.point-user-text {
+  color: #c85970;
+}
+
+.arrow-left {
+  margin-left: 10px;
+	width: 0;
+	height: 0;
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-right:10px solid #333;
+  display: inline-block;
+}
+.tooltip-custom {
+  background-color: #333;
+  color: white;
+  font-weight: 200;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-left: -5px;
+}
+
+
+.signup-wrap {
+  padding: 50px 10px;
+  max-width: 400px;
+  margin: 0 auto;
+
+  border: 1px solid $border-grey;
+}
+.history-wrap {
+  padding: 15px 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #ddd;
+  //border: 1px solid $border-grey;
+
+}
+
+.status-wrap {
+  padding: 50px 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid $border-grey;
+
+  .restroom-status {
+    width: 300px;
+    height: 300px;
+
+    background-color: $border-grey;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding-top: 110px;
+
+    .restroom-status-text {
+      color: white;
+      text-align: center;
+      font-size: 42px;
+      //margin-top: 100px;
+    }
+    .restroom-status-desc {
+      color: white;
+      text-align: center;
+      font-size: 18px;
+
+    }
+
+  }
+
+  .restroom-status.not-using {
+    background-color: $status-green;
+    cursor: pointer;
+
+  }
+  .restroom-status.using {
+    background-color: $status-red;
+    cursor: not-allowed;
+  }
+  .restroom-status.check-done {
+    background-color: $status-red;
+    cursor: pointer;
+  }
+
+  .leave-message-wrap {
+    padding: 15px 10px;
+    //border: 1px solid grey;
+
+    .form-control.leave-message {
+      max-width: 350px;
+      min-width: 235px;
+    }
+
+    .tooltip-inner {
+      padding: 13px 18px;
+      background-color: #333;
+    }
+    .tooltip.right .tooltip-arrow {
+      border-right-color: #333;
+    }
+  }
+
+  .avartar-message {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display:inline-block;
+  }
+} //status-wrap
+
+#sign-in-template {
+  .signup-btn {
+    margin-left: 15px;
+  }
+}
+
+// -------------------- default --------------------//
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;

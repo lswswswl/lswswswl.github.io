@@ -6,7 +6,13 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
+  function runBlock(
+    localStorageService,
+    $log
+  ) {
+    if(!localStorage.getItem('ladies')) {
+      localStorage.setItem('ladies', '{}');
+    }
 
     $log.debug('runBlock end');
   }

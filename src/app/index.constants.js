@@ -1,10 +1,10 @@
-/* global malarkey:false, moment:false */
+/* global moment:false */
 (function() {
   'use strict';
 
   angular
     .module('ladies')
-    .constant('malarkey', malarkey)
+    .constant('appTitle', 'ladies')
+    .constant('firebaseURL', 'https://ladies.firebaseio.com')
     .constant('moment', moment);
-
 })();

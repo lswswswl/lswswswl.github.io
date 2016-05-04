@@ -3,12 +3,13 @@ restroom: {
   //waiting: 0,
   //message: 'string',
   //emergency: true, false,
+  //option: S, L
 }
 
 user: {
   //email:
   //password:
-  //status: "OCCUPYING"
+  //occupant: true, false
 }
 
 action: {
