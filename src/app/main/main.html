@@ -36,14 +36,6 @@
     </div>
     <div ng-if="restroom.message"
     class="leave-message-wrap">
-      <!--
-      <a href="#"
-      uib-tooltip="{{restroom.message}}"
-      tooltip-placement="right"
-      tooltip-is-open="true"
-      tooltip-trigger="none">
-        <img src="assets/images/avartar2.png" class="avartar-message">
-      </a> -->
       <img ng-src="{{main.randomAvatar}}" class="avartar-message">
       <div class="arrow-left"></div>
       <span class="tooltip-custom">{{restroom.message}}</span>
@@ -82,11 +74,11 @@
   </div>
 
   <div class="history-wrap">
+    <h4>오늘의 기록</h4>
     <p ng-repeat="item in main.historyArray.slice().reverse()">
-      <span class="point-user-text">사용자</span>
-      <span ng-if="!item.finishAt">사용 중</span>
-      <span ng-if="item.finishAt">완료</span>
-      <!-- <span ng-if="item.useTime">{{item.useTime | amDateFormat: 'mm:ss'}}</span> -->
+      <span class="point-user-text">익명의 여인</span>
+      <span ng-if="!item.finishAt">이 사용 중 입니다.</span>
+      <span ng-if="item.finishAt">이 다녀갔습니다.</span>
       <span ng-if="!item.finishAt" class="pull-right">{{item.startAt | amDateFormat: 'HH:mm A'}}</span>
       <span ng-if="item.finishAt" class="pull-right">{{item.finishAt | amDateFormat: 'HH:mm A'}}</span>
 
@@ -94,7 +86,7 @@
     <!-- <p><span class="point-user-text">익명의 여인</span>이 사용 중 입니다. <span class="pull-right">10:30</span></p> -->
     <!-- <p><span class="point-user-text">익명의 여인</span>이 다녀갔습니다. <span class="pull-right">10:30</span></p> -->
   </div>
-  <pre>{{restroom}}</pre>
-  <pre>{{main.actionArray}}</pre>
+  <!-- <pre>{{restroom}}</pre>
+  <pre>{{main.actionArray}}</pre> -->
 
 </div>

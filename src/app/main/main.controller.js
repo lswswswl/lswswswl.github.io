@@ -110,27 +110,33 @@
     }
 
     function leaveMessage(message) {
-      /* update restroom with message, when restroom.status is false*/
-      if(!$scope.restroom.status) {
-        $scope.restroom.status = true;
-        $scope.restroom.occupiedBy = localStorageService.getKey('userId');
 
-        vm.actionArray.$add({
-          user: localStorageService.getKey('userId'),
-          startAt: Firebase.ServerValue.TIMESTAMP,
-          message: message
-        }).then(function(ref) {
-          var id = ref.key();
-          $scope.restroom.actionId = id;
-        });
-      } else {
-        /* update restroom with message, when restroom.status is true*/
-        $scope.restroom.message = message;
-        var actionArrayIdx = vm.actionArray.$indexFor($scope.restroom.actionId);
-        vm.actionArray[actionArrayIdx].message = message;
-        vm.actionArray.$save(actionArrayIdx).then(function(ref) {
-          ref.key() === vm.actionArray[actionArrayIdx].$id;
-        });
+      if(message) {
+        /* update restroom with message, when restroom.status is false*/
+        if(!$scope.restroom.status) {
+          $scope.restroom.status = true;
+          $scope.restroom.occupiedBy = localStorageService.getKey('userId');
+          $scope.restroom.message = message;
+
+          vm.actionArray.$add({
+            user: localStorageService.getKey('userId'),
+            startAt: Firebase.ServerValue.TIMESTAMP,
+            message: message
+          }).then(function(ref) {
+            var id = ref.key();
+            $scope.restroom.actionId = id;
+            vm.actionArray.$save(actionArrayIdx);
+          });
+        } else {
+          /* update restroom with message, when restroom.status is true*/
+          $scope.restroom.message = message;
+          var actionArrayIdx = vm.actionArray.$indexFor($scope.restroom.actionId);
+          vm.actionArray[actionArrayIdx].message = message;
+          vm.actionArray.$save(actionArrayIdx).then(function(ref) {
+            ref.key() === vm.actionArray[actionArrayIdx].$id;
+          });
+        }
+        vm.message = '';
       }
     }
 
